@@ -1,0 +1,14 @@
+document.getElementById("fsboForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Formun sayfayı yenilemesini engelle
+
+    const name = document.getElementById("name").value; // Kullanıcı adı
+    const fsboCount = parseInt(document.getElementById("fsboCount").value); // FSBO sayısı
+
+    // Liderlik tablosuna ekle
+    const leaderboard = document.getElementById("top3");
+    const newEntry = document.createElement("li");
+    newEntry.textContent = `${name} - ${fsboCount}`;
+    leaderboard.appendChild(newEntry);
+
+    alert("FSBO sayınız kaydedildi!"); // Kullanıcıya bilgi ver
+});
